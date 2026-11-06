@@ -1,0 +1,14 @@
+# Build output and run logs
+/sn30flash
+sn30flash.log
+wire.txt
+usb-watch/
+.venv/
+
+# 8BitDo's firmware and tools are not part of this repo
+*.dat
+*.exe
+*.zip
+
+# Local developer notes
+dev/
