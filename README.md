@@ -1,8 +1,10 @@
 # macos-sn30-updater
 
-`sn30flash` is a native macOS command-line tool that updates the firmware on an 8BitDo SN30 2.4G controller whose update mode appears as `8BitDo Receiver Fw` (USB ID `2dc8:3214`).
+`sn30flash` is a native macOS command-line tool that updates the firmware on an 8BitDo SN30 2.4G (81AF) controller whose update mode appears as `8BitDo Receiver Fw` (USB ID `2dc8:3214`).
 
 8BitDo's instructions say update mode should show up as a USB drive. On this hardware it presents one HID interface and no storage interface, so no drive appears, and 8BitDo's Mac updater doesn't list this ID. The updater that does support it is a Windows program. This tool uses the same protocol directly from a Mac, with no Windows or virtual machine.
+
+On models 81AD and 81AB, updating from macOS should already be supported: [8BitDo's Analogue Dock page](https://support.8bitdo.com/analogue/Dock/) gives macOS steps for both, which copy the firmware to the controller as a USB drive.
 
 > [!WARNING]
 > This is an unofficial tool, not affiliated with or endorsed by 8BitDo. Flashing can leave a controller unusable. Use it at your own risk.
@@ -21,7 +23,7 @@ Run `./sn30flash probe` first to see which version you have. The test controller
 
 - **Dock only:** 8BitDo labels the 1.23 firmware "For Analogue Dock only" and says to return to standard firmware for other systems.
 - **Receiver:** [one forum report](https://forum.core-electronics.com.au/t/problems-with-controller-sn30-81af-of-the-8bitdo/24114) says this file stopped an 81AF controller working with its receiver. Expect the same.
-- **Model match:** the test controller is labelled 81AF and the 1.23 file is for 81AD. 8BitDo's Dock page lists 81AD and 81AB but not 81AF, so the match is unconfirmed.
+- **Model match:** the test controller is labelled 81AF and the 1.23 file is labelled 81AD. 8BitDo's Dock page doesn't list 81AF, but the 81AD firmware flashed and paired with a Dock on this controller.
 - **No model check:** I found no model check in the Windows tool, and this tool has none.
 
 ## Firmware
